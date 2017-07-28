@@ -1,0 +1,13 @@
+= form_for @user, url: '/register', method: :post do |f|
+  / - binding.pry
+  / - if @user.errors.any?
+    / = render 'errors/messages', errors: @user.errors
+  .row
+    = f.text_field :first_name, input_options('First name', :first_name)
+    = f.text_field :last_name, input_options('Last name', :last_name)
+  .row
+    = f.text_field :email, input_options('Email', :email)
+    = f.password_field :password, input_options('Password', :password)
+    = f.password_field :password_confirmation, input_options('Password confirmation', :password_confirmation)
+
+  = f.submit 'Register', class: 'waves-effect waves-light btn'

@@ -43,6 +43,7 @@ group :test do
   gem 'rspec-rails'
   # gem 'webmock'
   gem 'shoulda'
+  gem 'capybara', '~> 2.8'
   gem 'database_cleaner'
 end
 

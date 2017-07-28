@@ -1,0 +1,4 @@
+.container
+  - flash.each do |key, message|
+    .row
+      .alert class="alert-#{key}" = message
