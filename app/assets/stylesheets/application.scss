@@ -14,5 +14,45 @@
  *= require_self
  */
 
+
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow:hidden;
+}
+
+.alert {
+  position: absolute;
+  top: 3%;
+  width: 50%;
+  left: 27%;
+  padding: 0 2%;
+  color: #fff;
+  border-radius: 2px;
+
+  .material-icons {
+    margin-top: 30%;
+    color: white;
+  }
+}
+
+.alert-error {
+  background: #fd8282;
+}
+
+.alert-notice {
+  background: #82d497;
+}

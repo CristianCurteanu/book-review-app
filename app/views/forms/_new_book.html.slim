@@ -1,0 +1,19 @@
+= form_for @book, url: '/books', method: :post do |f|
+  = f.label :title, 'Title'
+  = f.text_field :title
+
+  = f.label :author
+  = f.text_field :author
+
+  = f.label :description
+  = f.text_area :description, class: "materialize-textarea"
+
+  .file-field.input-field
+    .btn.btn-small
+      span = "Upload cover"
+      = f.file_field :cover
+    .file-path-wrapper
+      = text_field_tag :file, nil, class: 'file-path validate'
+
+
+  = f.submit 'Add book', class: 'waves-effect waves-light btn'

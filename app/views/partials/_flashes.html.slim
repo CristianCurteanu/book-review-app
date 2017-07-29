@@ -1,4 +1,9 @@
-.container
+
   - flash.each do |key, message|
     .row
-      .alert class="alert-#{key}" = message
+      .alert class="alert-#{key}"
+        .col.s10
+          p = message
+        .col.s2
+          a.close-flash
+            i.material-icons.prefix.valign-wrapper close

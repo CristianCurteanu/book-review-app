@@ -1,0 +1,19 @@
+.row
+  h3 = @book.title
+
+.row
+  .col.s12.m4
+    = image_tag @book.photo.url, class: 'responsive-img'
+  .col.s12.m8
+    .row
+      = "by #{@book.author}"
+    .row
+      = @book.description
+
+.container
+  = render 'forms/add_review'
+
+.container
+  - @book.reviews.each do |review|
+    = render 'review', review: review
+

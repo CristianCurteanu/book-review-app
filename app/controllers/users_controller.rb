@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
 
-  before_filter :authorize, only: :index
+  before_action :authorize, only: :index
 
-  before_filter :session_created, only: [:new, :create]
+  before_action :session_created, only: [:new, :create]
 
   def index
+    @books = Book.order(:title).includes(:photo).page(params[:page] || 1)
   end
 
   def new
@@ -13,13 +14,8 @@ class UsersController < ApplicationController
 
   def create
     @user ||= User.new(registration_params)
-    create_new @user, success: (proc do
-                                  session[:user_id] = @user.id
-                                  redirect_to login_path
-                                end),
-                      failure: (proc do
-                                  render :new
-                                end)
+    return redirect_to(login_path) if @user.save
+    render :new
   end
 
   private
