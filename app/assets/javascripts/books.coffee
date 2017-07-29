@@ -4,3 +4,5 @@
 $(document).ready ->
   $('.close-flash').on 'click', ->
     $('.alert').remove()
+
+  $('.material-box').materialbox()
