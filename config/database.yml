@@ -79,7 +79,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: book-reviewer_production
-  username: book-reviewer
-  password: <%= ENV['BOOK-REVIEWER_DATABASE_PASSWORD'] %>
+  pool: <%= ENV['DB_POOL'] || ENV['MAX_THREADS'] || 5 %>
+  url: <%= ENV['DATABASE_URL'] %>
