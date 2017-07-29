@@ -25,5 +25,6 @@ module BookReview
       g.template_engine :slim
       g.test_framework :rspec
     end
+    config.autoload_paths << "#{Rails.root}/app/uploaders"
   end
 end

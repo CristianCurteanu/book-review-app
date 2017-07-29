@@ -1,2 +1,15 @@
-h1 Users#index
-p Find me in app/views/users/index.html.slim
+.fixed-action-btn
+  a.btn-floating.btn-large.red href="#{book_new_path}"
+    i.large.material-icons add
+
+- @books.each do |book|
+    .card.horizontal
+      .card-content
+        .row
+          h5.cart-title = book.title
+          p = "by #{book.author}"
+        p = book.description
+        = link_to 'View more', books_path(book)
+
+ul.pagination.center
+  = paginate(@books)

@@ -1,0 +1,8 @@
+hr.separator
+.row
+  .col.s8
+    p
+      b = "#{User.find(review.user_id).full_name}:"
+    p = review.comment
+  .col.s4
+    p.right-align = "+#{review.rating}"

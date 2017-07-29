@@ -9,10 +9,10 @@
   </head>
 
   <body>
-    <%= render 'partials/flashes' %>
     <% if current_user %>
       <%= render 'partials/sidebar' %>
         <div class="container">
+          <%= render 'partials/flashes' %>
           <%= yield %>
         </div>
       <%= render 'partials/footer' %>

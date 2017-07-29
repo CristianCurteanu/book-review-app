@@ -1,0 +1,11 @@
+= form_tag review_path, method: :post do
+  = hidden_field_tag 'book_id', @book.id
+
+  .row
+    .input-field.col.s10
+      = label_tag :comment, 'Comment'
+      = text_area_tag :comment, nil, class: 'materialize-textarea'
+    .input-field.col.s2
+      = select_tag 'rating', options_for_select(rating_options)
+    .col.s4
+      = submit_tag 'Submit', class: 'btn'

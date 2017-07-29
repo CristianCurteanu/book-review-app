@@ -38,6 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'materialize-sass'
 gem 'carrierwave', '~> 1.0'
 gem 'slim-rails'
+gem 'kaminari'
 
 group :test do
   gem 'rspec-rails'
