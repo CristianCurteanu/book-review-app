@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "faker"
+
+user = User.create first_name: 'John',
+                   last_name: 'Smith',
+                   email: 'john.smith@google.com',
+                   password: 'password'
+
+book = Book.create title: 'Sherlock Holmes',
+                   author: 'Arthur Conan Doyle',
+                   description: 'A collection of adventures of a legendary detective, Sherlock Holmes'
+
+book.reviews.create rating: 4, comment: 'Amazing Book'
+
+user.reviews = book.reviews
+user.save!
