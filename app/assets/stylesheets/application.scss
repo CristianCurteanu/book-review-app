@@ -25,6 +25,11 @@ html {
 
 body {
     margin: 0 0 100px; /* bottom = footer height */
+    .side-nav {
+      li > a {
+        font-weight: 300
+      }
+    }
 }
 
 footer {
