@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require "faker"
+require "faker"
 
-if Rails.env.development?
+if Rails.env.production?
   12.times do
     User.create first_name: Faker::Name.first_name,
                 last_name:  Faker::Name.last_name,
